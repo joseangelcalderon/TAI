@@ -54,11 +54,27 @@ function genera_pregunta(dif){
     
 }
 
-/*
-  delete = itemId => {
-    //En vez de uasr item.id, usa la propiedad
-    //que te ayuda a identificar tu objeto que quieres borrar.
-    //Quizas clavearticulo sea la adecuada.
-    const filtredData = this.state.items.filter(item => item.id !== itemId);
-    this.setState({ items: filtredData });
-  };*/
+function genera_aleatoriedad(){
+    var preguntas = aux.preguntas.filter(preg => preg.dificultad.includes(0)); //Esto te saca las preguntas de dificultad que se le pase no?
+    var pregunta = preguntas[0];
+    var arraynum = [1, 2, 3, 4];
+    var min = 1; 
+    var max = 4;
+    var numpregunta = Math.floor(Math.random() * (max - min+ 1) + min); //Dependiendo del número que te salga, quieres un orden u otro
+    if(numpregunta===1){
+        console.log("Respuesta 1")
+        console.log("Respuesta 2")
+        console.log("Respuesta 3")
+        console.log("Respuesta 4")
+    }else if(numpregunta === 2){
+        console.log("Respuesta 2")
+        console.log("Respuesta 3")
+        console.log("Respuesta 4")
+        console.log("Respuesta 1")
+    }else {
+        console.log("otra idea")
+        console.log("Respuesta 3")
+        console.log("Respuesta 4")
+        console.log("Respuesta 1")
+    }
+}
